@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 358 100% 46%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 53%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 358 100% 46%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 358 100% 46%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-akira-black text-akira-text font-body antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-1.5 h-1.5;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-akira-dark;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-akira-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-akira-muted;
+  }
+}
+
+@layer components {
+  .card-akira {
+    @apply bg-akira-dark border border-akira-border rounded-xl;
+  }
+
+  .btn-primary {
+    @apply bg-akira-red hover:bg-akira-red-dark text-white font-semibold px-4 py-2 rounded-lg transition-colors;
+  }
+
+  .skeleton {
+    @apply bg-gradient-to-r from-akira-dark via-akira-darker to-akira-dark bg-[length:200%_100%] animate-shimmer rounded;
+  }
+
+  .page-enter {
+    @apply animate-fade-in;
+  }
+
+  .badge-activa {
+    @apply bg-green-500/20 text-green-400 border border-green-500/30;
+  }
+  .badge-vencida {
+    @apply bg-red-500/20 text-red-400 border border-red-500/30;
+  }
+  .badge-pendiente {
+    @apply bg-yellow-500/20 text-yellow-400 border border-yellow-500/30;
+  }
+  .badge-cancelada {
+    @apply bg-gray-500/20 text-gray-400 border border-gray-500/30;
+  }
+}
+
+@layer components {
+  .input-field {
+    @apply w-full bg-akira-darker border border-akira-border rounded-lg px-3 py-2.5 text-white placeholder-akira-muted/50 focus:outline-none focus:border-akira-red transition-colors text-sm;
+  }
+
+  select.input-field {
+    @apply cursor-pointer;
+  }
+
+  select.input-field option {
+    @apply bg-akira-dark;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-akira-red to-orange-500 bg-clip-text text-transparent;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
