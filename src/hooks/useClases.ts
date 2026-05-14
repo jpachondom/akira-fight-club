@@ -63,7 +63,7 @@ export function useClaseDetalle(claseId: string) {
         .neq('estado', 'cancelada'),
     ]).then(([claseRes, reservasRes]) => {
       if (claseRes.data) setClase(claseRes.data)
-      if (reservasRes.data) setReservas(reservasRes.data as typeof reservas)
+      if (reservasRes.data) setReservas(reservasRes.data as unknown as typeof reservas)
       setLoading(false)
     })
   }, [claseId])
